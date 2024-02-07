@@ -1,26 +1,15 @@
 "use strict";
 
-import language from "./languageData.js";
+import addList from "./components/addList.js";
+import getLanguage from "./components/getLanguage.js";
 
-const renderLanguageData = document.querySelectorAll(".selectLanguage");
 const changeLanguage = document.querySelector("#changeLang");
 const toChangeLanguage = document.querySelector("#toChangeLang");
-let option;
 
-renderLanguageData.forEach((select) => {
-  for (let [code, value] of Object.entries(language)) {
-    option = document.createElement("option");
-    option.innerHTML = value;
-    option.dataset.langCode = code;
-    option.classList.add("option-select");
-    option.addEventListener("click", (e) => {
-      console.log(e.target);
-    });
-    select.appendChild(option);
-  }
-});
+// *This call is to set the languages on UI
+addList(changeLanguage);
+addList(toChangeLanguage);
 
-console.log();
-changeLanguage.childNodes.forEach((el) => {
- 
-});
+// * This call is used which languages is selected and the we get the language Code
+getLanguage(changeLanguage, 0);
+getLanguage(toChangeLanguage, 1);
