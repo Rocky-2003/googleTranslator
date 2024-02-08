@@ -10,7 +10,9 @@ export function getCode(lang, arrangeNo) {
     if (lang === value) {
       arr[arrangeNo] = key;
       if (arr[0] && arr[1]) {
-        fetchData(arr[0], arr[1]);
+        console.log(arr[0], arr[1]);
+        // console.log(arr);
+        let value =  fetchData(arr[0], arr[1]);
       }
     }
   }

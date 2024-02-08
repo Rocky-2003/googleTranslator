@@ -162,7 +162,7 @@ header div .mic,
   color: #b9bdc2;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
 .filters span {
@@ -198,16 +198,23 @@ header div .mic,
 
 .translation-section ul {
   display: flex;
+  /* justify-content: center; */
+  align-items: center;
 }
 
+.translation-section ul img {
+  width: 25px;
+  margin-top: 10px;
+  margin: 10px 10px 0;
+}
 .selectLanguage {
-  width: 248px;
+  width: 300px;
   height: 40px;
   border-radius: 5px;
   background-color: #202124;
   color: #8ab4f8;
   padding: 13px 19px 8px 19px;
-  margin-right: 40px;
+
   margin-top: 10px;
 }
 
@@ -236,4 +243,70 @@ header div .mic,
 
 .filters span:hover {
   background-color: #303134;
+}
+
+.text-area {
+  width: 652px;
+  display: flex;
+  gap: 48px;
+}
+
+.text-area .area {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 12px 16px;
+  width: 298px;
+  border: 0;
+  min-height: 140px;
+  margin: 10px 0;
+  resize: none;
+  font-size: 28px;
+  scrollbar-width: none;
+}
+
+.text-area .area:focus {
+  outline: none;
+}
+#area1::placeholder {
+  color: #777b7e;
+}
+
+#area2::placeholder {
+  color: #9ca0a4;
+}
+
+#area1 {
+  background-color: #202124;
+  color: #ffffff;
+}
+
+#area2 {
+  border-radius: 5px;
+  background-color: #303134;
+  color: #ffffff;
+}
+
+.text-area-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+#textArea_end_line {
+  width: 420px;
+  /* margin-top: 10px; */
+}
+
+.text-area-bottom span {
+  color: #9aa0a6;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.text-area-bottom p {
+  color: #9aa0a6;
+  /* margin-top: 5px; */
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
