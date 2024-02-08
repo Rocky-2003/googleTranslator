@@ -1,19 +1,33 @@
-export async function fetchData(lang1, lang2, text) {
-  // console.log(lang1, lang2);
-  try {
-    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${`${lang1}`}&tl=${`${lang2}`}&dt=t&q=${encodeURI(
-      "This is Rocky"
+import languageData from "../languageData.js";
+// import swapList from "./components/swapList.js";
+
+
+export default async function apiCall(
+  inputLanguage = "en",
+  outputLanguage,
+  inputText,
+  outputText
+) {
+  if (
+    inputLanguage !== undefined &&
+    outputLanguage !== undefined &&
+    inputText.value !== ""
+  ) {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURI(
+      inputText.value
     )}`;
-
     const response = await fetch(url);
-
     const data = await response.json();
- 
 
-    console.log(data[0][0][0]);
-  } catch (err) {
-    console.log(err);
+    outputText.value = data[0][0][0];
+
+    for (let [key, value] of Object.entries(languageData)) {
+      if (key.substring(0, 2) === inputLanguage) {
+        console.log(value);
+      }
+      if (key.substring(0, 2) === outputLanguage) {
+        console.log(value);
+      }
+    }
   }
 }
-
-// let data = await fetchData();

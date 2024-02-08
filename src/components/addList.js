@@ -1,11 +1,14 @@
-import language from "../languageData.js";
+"use strict";
+import languageData from "../languageData.js";
+import apiCall from "./apiCall.js";
 
-export default function addList(listName) {
-  for (let [key, value] of Object.entries(language)) {
-    // console.log(key, value);
+export default function addList(lang) {
+  
+  for (let [key, value] of Object.entries(languageData)) {
     let option = document.createElement("option");
     option.innerHTML = value;
     option.dataset.langCode = key;
-    listName.appendChild(option);
+    option.classList.add("value");
+    lang.appendChild(option);
   }
 }

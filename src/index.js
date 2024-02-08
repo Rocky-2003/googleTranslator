@@ -1,18 +1,27 @@
 "use strict";
 
 import addList from "./components/addList.js";
-import { getLanguage } from "./components/getLanguage.js";
-// import { language } from "./components/getLanguage.js";
+import swapList from "./components/swapList.js";
+// import apiCall from "./components/apiCall.js";
 
-const changeLanguage = document.querySelector("#changeLang");
-const toChangeLanguage = document.querySelector("#toChangeLang");
-// const reverseLanguage = document.querySelector(".reverse-lang");
+import getData from "./components/getData.js";
 
-// *This call is to set the languages on UI
-addList(changeLanguage);
-addList(toChangeLanguage);
+const inputLanguage = document.querySelector("#area1");
+const outputLanguage = document.querySelector("#area2");
+const commonToAdd = document.querySelectorAll(".selectLanguage");
+const language1 = document.querySelector("#changeLang");
+const language2 = document.querySelector("#toChangeLang");
 
-// * This call is used which languages is selected and the we get the language Code
+// * ADDING LIST TO DROPDOWN SELECT
 
-getLanguage(changeLanguage, 0);
-getLanguage(toChangeLanguage, 1);
+// let swap = () => {
+//   swapList(...argu);
+// };
+let argu = [language1, language2, inputLanguage, outputLanguage];
+getData(argu);
+commonToAdd.forEach((language) => {
+  addList(language);
+});
+
+// *wapping list of selected languages;
+swapList(...argu);
