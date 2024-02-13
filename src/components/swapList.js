@@ -1,17 +1,19 @@
-import apiCall from "./apiCall.js";
+// import apiCall from "./apiCall.js";
 
-export default function swapList(lang1, lang2, input, output) {
-
+export default function swapList(lang1, lang2, inputLang, outputLang) {
   let swap = document.querySelector(".reverse-lang");
+
   swap.addEventListener("click", (e) => {
-    if (lang1.value !== "Auto Detect") {
-      const temp = lang1.value;
+    if (outputLang.value !== "" && lang1.value !== '') {
+    
+      // console.log(lang1.value, lang2.value, inputLang.value, outputLang.value);
+      let temp = lang1.value;
       lang1.value = lang2.value;
       lang2.value = temp;
 
-      const tempInput = input.value;
-      input.value = output.value;
-      output.value = tempInput;
+      let tempIO = outputLang.value;
+      outputLang.value = inputLang.value;
+      inputLang.value = tempIO;
     }
   });
 }

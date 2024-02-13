@@ -7,6 +7,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -309,4 +313,33 @@ header div .mic,
   /* margin-top: 5px; */
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-bottom img {
+  width: 250px;
+  margin-left: -15px;
+}
+
+.page-bottom a h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: left;
+  font-weight: 100;
+  letter-spacing: normal;
+  color: #8ab4f8;
+}
+
+.page-bottom a blockquote {
+  padding-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 22.12px;
+  text-align: left;
+  letter-spacing: normal;
+  color: #bdc1c6;
+}
+
+.page-bottom a h2:hover {
+  text-decoration: underline;
 }

@@ -2,8 +2,12 @@ import languageData from "../languageData.js";
 import apiCall from "./apiCall.js";
 
 export default function getData([lang1, lang2, inputText, outputText]) {
+  
   let inputL1;
   let inputL2;
+  inputText.addEventListener("input", () => {
+    callApi();
+  });
 
   for (let [key, value] of Object.entries(languageData)) {
     lang1.addEventListener("change", (e) => {
@@ -19,9 +23,6 @@ export default function getData([lang1, lang2, inputText, outputText]) {
       }
     });
   }
-  inputText.addEventListener("input", () => {
-    callApi();
-  });
 
   function callApi() {
     apiCall(inputL1, inputL2, inputText, outputText);
